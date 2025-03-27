@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -48,14 +47,14 @@ const Navbar = () => {
               <a
                 key={link.title}
                 href={link.href}
-                className="relative font-medium text-sm text-foreground/80 hover:text-foreground transition-colors duration-200 before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-0.5 before:bg-foreground before:origin-right before:scale-x-0 before:transition-transform hover:before:origin-left hover:before:scale-x-100"
+                className="relative flex items-center font-medium text-sm text-foreground/80 hover:text-foreground transition-colors duration-200 before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-0.5 before:bg-foreground before:origin-right before:scale-x-0 before:transition-transform hover:before:origin-left hover:before:scale-x-100"
               >
                 {link.title}
               </a>
             ))}
-            <Button className="rounded-full px-6" size="sm">
+            {/* <Button className="rounded-full px-6" size="sm">
               Get in touch <ChevronRight className="ml-1 h-4 w-4" />
-            </Button>
+            </Button> */}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -98,15 +97,15 @@ const Navbar = () => {
             <a
               key={link.title}
               href={link.href}
-              className="font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+              className="font-medium text-center text-foreground/80 hover:text-foreground transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.title}
             </a>
           ))}
-          <Button className="rounded-full px-6 w-full" size="sm">
+          {/* <Button className="rounded-full px-6 w-full" size="sm">
             Get in touch <ChevronRight className="ml-1 h-4 w-4" />
-          </Button>
+          </Button> */}
         </nav>
       </div>
     </header>

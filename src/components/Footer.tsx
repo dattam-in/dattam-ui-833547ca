@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, MapPin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -10,8 +9,8 @@ const Footer = () => {
   return (
     <footer className="bg-muted/30 py-12 px-4">
       <div className="container max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div>
             <div className="flex items-center mb-4">
               <span className="text-2xl font-display font-bold tracking-tight">
                 Dattam<span className="text-primary/70">Labs</span>
@@ -21,7 +20,7 @@ const Footer = () => {
               We transform data into insights and ideas into reality through innovative technology solutions.
             </p>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -47,29 +46,34 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <h3 className="text-lg font-semibold mb-4">Our Location</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
+              <div className="flex items-start">
+                <MapPin className="h-6 w-6 md:h-10 md:w-10 lg:h-8 lg:w-8 mt-1 mr-4 text-primary/70" />
+                <div>
+                  <p className="font-semibold">Dattam Labs, Awfis, Prestige Skytech</p>
+                  <p className="text-muted-foreground">ISB Rd, behind Continental Hospital, Financial District</p>
+                  <p className="text-muted-foreground">Nanakramguda, Telangana 500032</p>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <Mail className="h-6 w-6 mr-4 text-primary/70" />
+                <a href="mailto:contact@dattam.in" className="text-foreground hover:text-primary/70 transition-colors">
+                  contact@dattam.in
                 </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Terms of Service
-                </a>
-              </li>
+              </div>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Dattam Labs. All rights reserved.
           </p>
-          
+
           <button
             onClick={scrollToTop}
             className="mt-4 md:mt-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted text-foreground hover:bg-foreground hover:text-background transition-colors duration-200"

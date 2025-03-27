@@ -61,9 +61,9 @@ const Services = () => {
         className="container max-w-7xl mx-auto appear-animation"
       >
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium text-primary/70 bg-muted rounded-full mb-4">
+          {/* <span className="inline-block px-3 py-1 text-sm font-medium text-primary/70 bg-muted rounded-full mb-4">
             Services
-          </span>
+          </span> */}
           <h2 className="section-title">Where we can help</h2>
           <p className="section-subtitle">
             Our services are designed to deliver exceptional value across the entire data and application lifecycle.
@@ -76,13 +76,13 @@ const Services = () => {
               key={index} 
               className="group overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
-              <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden">
+              {/* <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden">
                 <img 
                   src={service.image}
                   alt={service.name}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-              </div>
+              </div> */}
               <div className="p-6">
                 <div className="mb-4 flex items-center">
                   <div className="rounded-full bg-primary/5 p-2 text-primary">

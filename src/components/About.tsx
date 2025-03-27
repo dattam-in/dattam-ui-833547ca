@@ -50,9 +50,9 @@ const About = () => {
           </div>
           
           <div className="space-y-6">
-            <span className="inline-block px-3 py-1 text-sm font-medium text-primary/70 bg-background rounded-full">
+            {/* <span className="inline-block px-3 py-1 text-sm font-medium text-primary/70 bg-background rounded-full">
               About Us
-            </span>
+            </span> */}
             <h2 className="section-title text-left mb-4">
               Transforming ideas into innovative solutions
             </h2>

@@ -38,9 +38,9 @@ const Hero = () => {
         className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 appear-animation"
       >
         <div className="text-center space-y-6 py-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium text-foreground/70 bg-muted rounded-full">
+          {/* <span className="inline-block px-3 py-1 text-sm font-medium text-foreground/70 bg-muted rounded-full">
             Technology & Innovation
-          </span>
+          </span> */}
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight">
             Welcome to Dattam Labs!

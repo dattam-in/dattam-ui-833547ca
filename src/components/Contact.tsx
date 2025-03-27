@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -15,11 +15,11 @@ const Contact = () => {
       },
       { threshold: 0.1 }
     );
-    
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -29,21 +29,21 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section-padding bg-white">
-      <div 
-        ref={sectionRef} 
+      <div
+        ref={sectionRef}
         className="container max-w-7xl mx-auto appear-animation"
       >
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium text-primary/70 bg-muted rounded-full mb-4">
+          {/* <span className="inline-block px-3 py-1 text-sm font-medium text-primary/70 bg-muted rounded-full mb-4">
             Contact Us
-          </span>
+          </span> */}
           <h2 className="section-title">Get in touch</h2>
           <p className="section-subtitle">
             Have a question or want to work together? We'd love to hear from you.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <div className="flex justify-center">
           <div className="bg-muted/20 p-8 rounded-2xl">
             <h3 className="text-2xl font-bold mb-6">Our Location</h3>
             <div className="space-y-6">
@@ -55,29 +55,29 @@ const Contact = () => {
                   <p className="text-muted-foreground">Nanakramguda, Telangana 500032</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Mail className="h-6 w-6 mr-4 text-primary/70" />
                 <a href="mailto:contact@dattam.in" className="text-foreground hover:text-primary/70 transition-colors">
                   contact@dattam.in
                 </a>
               </div>
-              
+
               <div className="pt-4 flex space-x-4">
-                <a 
-                  href="https://github.com/dattamlabs" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/dattam-in"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted text-foreground hover:bg-foreground hover:text-background transition-colors duration-200"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted text-foreground hover:bg-foreground hover:text-background transition-colors"
                   aria-label="GitHub"
                 >
                   <Github className="h-5 w-5" />
                 </a>
-                <a 
-                  href="https://linkedin.com/company/dattamlabs" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com/company/dattam-in"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted text-foreground hover:bg-foreground hover:text-background transition-colors duration-200"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted text-foreground hover:bg-foreground hover:text-background transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
@@ -85,8 +85,8 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-border">
+
+          {/* <div className="bg-white p-8 rounded-2xl shadow-sm border border-border">
             <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
             <form className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -148,7 +148,7 @@ const Contact = () => {
                 </button>
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
