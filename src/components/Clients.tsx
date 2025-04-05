@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { animate, motion, useAnimation, useMotionValue } from "framer-motion";
 
 const clients = [
   { name: "CHARTR", logo: "./chartr_logo.jpg", link: "https://chartr.in" },
@@ -10,48 +10,57 @@ const clients = [
 ];
 
 // Duplicate the array to ensure seamless looping
-const scrollingClients = [...clients, ...clients, ...clients, ...clients];
+const scrollingClients = [...clients, ...clients];
 
 const Clients = () => {
-  const controls = useAnimation();
-  const scrollRef = useRef(null);
+  const x = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
+  const animationRef = useRef(null);
+
+  const startAnimation = () => {
+    animationRef.current = animate(x, -1000, {
+      type: "tween",
+      duration: 20,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "loop",
+    });
+  };
+
+  const stopAnimation = () => {
+    if (animationRef.current) {
+      animationRef.current.stop();
+    }
+  };
 
   useEffect(() => {
-    if (!isHovered) {
-      startAutoScroll();
+    if (isHovered) {
+      stopAnimation();
     } else {
-      controls.stop();
+      startAnimation();
     }
-  }, [isHovered]);
 
-  const startAutoScroll = () => {
-    controls.start({ x: [0, -1000], transition: { repeat: Infinity, duration: 10, ease: "linear" } });
-  };
+    return stopAnimation;
+  }, [isHovered]);
 
   return (
     <section id="clients" className="section-padding bg-background">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          {/* <span className="inline-block px-3 py-1 text-sm font-medium text-primary/70 bg-muted rounded-full mb-4">
-            Our Clients
-          </span> */}
           <h2 className="section-title">Trusted by organizations</h2>
           <p className="section-subtitle">
             We're proud to work with these innovative organizations to deliver exceptional results.
           </p>
         </div>
 
-        {/* Scrolling Client Logos */}
-        <div ref={scrollRef}
+        <div
           className="relative overflow-hidden w-full whitespace-nowrap scrollbar-hide"
           onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}>
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <motion.div
             className="flex space-x-8 md:space-x-16 lg:space-x-32"
-            animate={controls}
-            drag="x"
-            dragConstraints={{ left: -1000, right: 0 }}
+            style={{ x }}
           >
             {scrollingClients.map((client, index) => (
               <a
