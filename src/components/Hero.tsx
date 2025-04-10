@@ -67,13 +67,13 @@ const Hero = () => {
         </div>
       </div>
       
-      <a 
+      {/* <a 
         href="#services" 
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-foreground/50 hover:text-foreground transition-colors duration-300"
       >
         <span className="text-sm font-medium mb-2">Scroll to explore</span>
         <ChevronDown className="animate-bounce" size={20} />
-      </a>
+      </a> */}
     </section>
   );
 };
