@@ -36,9 +36,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <span className="text-2xl font-display font-bold tracking-tight">
-              Dattam<span className="text-primary/70">Labs</span>
-            </span>
+            <img
+              src="/logo.png"
+              alt="DattamLabs Logo"
+              className="h-16 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
